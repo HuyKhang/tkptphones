@@ -20,22 +20,22 @@ class UserMiddleware {
 		// 	return redirect('admin/dangnhap');
 		// }
 
-		if (Auth::user()->quyen == 1) {
-			return $next($request);
-		} else {
-			return redirect()->back();
-		}
-
-		// if (Auth::check()) {
-		// 	$user = Auth::user();
-		// 	if ($user->position == 1) {
-		// 		return $next($request);
-		// 	} else {
-		// 		return redirect('admin/dangnhap');
-		// 	}
-
+		// if (Auth::user()->quyen == 1) {
+		// 	return $next($request);
 		// } else {
-		// 	return redirect('admin/dangnhap');
+		// 	return redirect()->back();
 		// }
+
+		if (Auth::check()) {
+			$user = Auth::user();
+			if ($user->position == 1) {
+				return $next($request);
+			} else {
+				return redirect('admin/dangnhap');
+			}
+
+		} else {
+			return redirect('admin/dangnhap');
+		}
 	}
 }

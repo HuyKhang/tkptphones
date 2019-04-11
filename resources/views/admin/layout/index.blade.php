@@ -183,6 +183,12 @@
               <span class="menu-title">Quản lí nhân viên</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin/produce/danhsach">
+              <i class="ti-mobile menu-icon"></i>
+              <span class="menu-title">Quản lí sản phẩm</span>
+            </a>
+          </li>
           @elseif(Auth::user()->position==0)
           <li class="nav-item">
             <a class="nav-link" href="index.html">
@@ -200,6 +206,12 @@
             <a class="nav-link" href="admin/manufacturer/danhsach">
               <i class="ti-menu-alt menu-icon"></i>
               <span class="menu-title">Nhà sản xuất</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin/produce/danhsach">
+              <i class="ti-mobile menu-icon"></i>
+              <span class="menu-title">Quản lí sản phẩm</span>
             </a>
           </li>
           @endif

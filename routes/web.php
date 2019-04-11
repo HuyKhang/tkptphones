@@ -71,13 +71,27 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 		Route::get('xoa/{id}', 'TypeproduceController@getXoa');
 	});
 
+	Route::group(['prefix' => 'produce'], function () {
+		//admin/manufacturer/danhsach
+		Route::get('danhsach', 'ProduceController@getDanhsach');
+		Route::post('danhsach', 'ProduceController@postDanhsach');
+		//adminmanufacturer/sua
+		Route::get('sua/{id}', 'ProduceController@getSua');
+		Route::post('sua/{id}', 'ProduceController@postSua');
+		//admin/manufacturer/them
+		Route::get('them', 'ProduceController@getThem');
+		Route::post('them', 'ProduceController@postThem');
+		//admin/manufacturer/xoa
+		Route::get('xoa/{id}', 'ProduceController@getXoa');
+	});
+
 	Route::group(['prefix' => 'khachhang'], function () {
 		//admin/khachhang/danhsach
 		Route::get('danhsach', 'KhachhangController@getDanhsach');
 		Route::post('danhsach', 'KhachhangController@postDanhsach');
 		//admin/khachhang/sua
-		Route::get('sua', 'KhachhangController@getSua');
-		Route::post('sua', 'KhachhangController@postSua');
+		Route::get('sua/{id}', 'KhachhangController@getSua');
+		Route::post('sua/{id}', 'KhachhangController@postSua');
 		//admin/khachhang/them
 		Route::get('them', 'KhachhangController@getThem');
 		Route::post('them', 'KhachhangController@postThem');
